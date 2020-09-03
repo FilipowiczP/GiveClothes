@@ -1,9 +1,13 @@
 import React from 'react';
 import Main from './Main';
+import FirstSection from './FirstSection';
 
 const Home = () => {
     return(
-        <Main />
+        <>
+            <Main />
+            <FirstSection />
+        </>
     );
 }
 

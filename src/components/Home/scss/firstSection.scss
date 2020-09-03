@@ -1,0 +1,21 @@
+@import '../../settings/colors';
+
+.firstSection{
+    display: flex;
+    justify-content: space-between;
+    background-color: $third-color;
+    &__box{
+        width: 25%;
+        margin: 50px 80px;
+        text-align: center;
+        color: $second-color;
+        &__counter{
+            font-size: 90px;
+            font-weight: normal;
+        }
+        &__title{
+            font-size: 18px;
+            margin: 25px 0;
+        }
+    }
+}
