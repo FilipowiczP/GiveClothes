@@ -1,7 +1,8 @@
 import React from 'react';
-import decoration from '../images/Decoration.svg';
 import {Link} from 'react-scroll';
+import decoration from '../images/Decoration.svg';
 import './scss/main.scss';
+import Navigation from './Navigation';
 
 const Main = () => {
     return(
@@ -10,15 +11,7 @@ const Main = () => {
                 <div>
                     <p>Zaloguj</p>
                 </div>
-                <nav className="main__nav">
-                    <ul className="main__nav__list">
-                        <Link className="main__nav__list__item"  activeClass="active" to="" smooth={true} offset={0} duration={500}>Start</Link>
-                        <Link className="main__nav__list__item" activeClass="active" to="" smooth={true} offset={0} duration={500}>O co chodzi?</Link>
-                        <Link className="main__nav__list__item" activeClass="active" to="" smooth={true} offset={0} duration={500}>O nas</Link>
-                        <Link className="main__nav__list__item" activeClass="active" to="" smooth={true} offset={0} duration={500}>Fundacja i organizacja</Link>
-                        <Link className="main__nav__list__item" activeClass="active" to="" smooth={true} offset={0} duration={500}>Kontakt</Link>
-                    </ul>
-                </nav>
+            <Navigation />
             </header>
             <div className="main__content">
                     <h1 className="main__content__text">Zacznij pomagać</h1>

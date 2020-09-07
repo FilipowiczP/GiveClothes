@@ -1,0 +1,23 @@
+@import '../../settings/colors';
+
+.nav{
+    &__list{
+        display: flex;
+        &__item{
+            font-size: 18px;
+            height: 60px;
+            width: 100px;
+            cursor: pointer;
+            text-align: center;
+            margin: auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0;
+            margin: 40px 10px;
+            &:hover{
+                border: 0.75px solid $fifth-color;
+            }
+        }            
+    }
+}
