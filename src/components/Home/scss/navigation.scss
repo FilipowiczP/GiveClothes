@@ -1,6 +1,10 @@
 @import '../../settings/colors';
 
 .nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 20px 80px;
     &__list{
         display: flex;
         &__item{

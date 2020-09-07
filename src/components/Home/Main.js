@@ -8,9 +8,6 @@ const Main = () => {
     return(
         <main className="main" id="main">
             <header className="main__header">
-                <div>
-                    <p>Zaloguj</p>
-                </div>
             <Navigation />
             </header>
             <div className="main__content">
