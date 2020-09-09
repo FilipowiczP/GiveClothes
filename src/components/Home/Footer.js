@@ -6,14 +6,16 @@ const Footer = () =>{
     return(
         <footer className="footer" id="footer">
             <div className="footer__content">
-                <h1>Skontaktuj się z nami</h1>
-                <img src={decoration} alt="decoration" />
+                <h1 className="footer__content__title">Skontaktuj się z nami</h1>
+                <img src={decoration} alt="decoration" className="footer__content__decoration" />
                 <form className="footer__content__form">
                     <div className="footer__content__form__layout">
-                        <label for="name">Wpisz swoję imię</label>
-                        <input type="text" id="name" />
-                        <label for="email">Wpisz swój email</label>
-                        <input type="email" id="email" />
+
+                        <label for="name" className="footer__content__form__label">Wpisz swoję imię</label>
+                        <input type="text" id="name" className="footer__content__form__input" />
+
+                        <label for="email" className="footer__content__form__label">Wpisz swój email</label>
+                        <input type="email" id="email" className="footer__content__form__input" />
                     </div>
                     <textarea className="footer__content__form__textarea" placeholder="Lorem ipsum dolor sit amet, consectetur 
                     adipiscing elit, sed do eiusmod tempor incididunt ut 
