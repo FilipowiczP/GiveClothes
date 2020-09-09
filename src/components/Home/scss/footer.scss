@@ -1,6 +1,7 @@
 @import '../../settings/colors';
 
 .footer{
+    position: relative;
     background-image: url(../../images/footer-foto.jpg);
     background-size: cover;
     height: 100vh;
@@ -10,10 +11,21 @@
     justify-content: flex-end;
     color: $fifth-color;
     padding: 0 100px;
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.4);
+        z-index: 2;
+    }
     &__content{
         display: flex;
         flex-direction: column;
         align-items: center;
+        z-index: 3;
         &__title{
             font-size: 38px;
         }
@@ -23,12 +35,56 @@
         &__form{
             display: flex;
             flex-direction: column;
+            align-items: flex-end;
+            &__box{
+                display: flex;
+            }
+            &__layout{
+                display: flex;
+                flex-direction: column;
+                margin: 10px 20px;
+            }
+            &__input{
+                border: none;
+                border-bottom: 2px solid $fourth-color;
+                background-color: rgba(255, 255, 255, 0.4);
+                margin: 5px 0;
+                height: 35px;
+                width: 200px;
+                padding: 5px 10px;
+            }
+            &__area{
+                width: 100%;
+                margin-left: 20px;
+            }
+            &__textarea{
+                background-color: rgba(255, 255, 255, 0.2);
+                height: 120px;
+                width: 100%;
+                margin: 20px auto;
+                border: none;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                border-bottom: 2px solid $fourth-color;
+                resize: none;
+                padding: 10px;
+            }
+            &__submit{
+                cursor: pointer;
+                font-size: 18px;
+                color: $fourth-color;
+                width: 120px;
+                height: 50px;
+                background-color: rgba(255, 255, 255, 0.4);
+                border: 2px solid $fourth-color;
+            }
+            &__send{
+                color: $third-color;
+                font-size: 18px;
+                &-hide{
+                    display: none;
+                }
+            }
         }
-        &__input{
-            border: none;
-            border-bottom: 1px solid $fourth-color;
-            background-color: $main-color;
-        }
-        
     }
 }
