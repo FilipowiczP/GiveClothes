@@ -4,6 +4,7 @@ import FirstSection from './FirstSection';
 import SecondSection from './SecondSection';
 import AboutUs from './AboutUs';
 import WhoHelp from './WhoHelp';
+import Footer from './Footer';
 
 const Home = () => {
     return(
@@ -13,6 +14,7 @@ const Home = () => {
             <SecondSection />
             <AboutUs />
             <WhoHelp />
+            <Footer />
         </>
     );
 }
