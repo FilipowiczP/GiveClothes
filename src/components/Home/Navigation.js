@@ -8,7 +8,6 @@ const Navigation = () =>{
         <nav className="nav">
             <div>
                 <NavPages />
-                {/* <a href="/login">Zaloguj</a> */}
             </div>
             <ul className="nav__list">
                 <Link className="nav__list__item" activeClass="active" to="firstSection" smooth={true} offset={0} duration={500}>Start</Link>
