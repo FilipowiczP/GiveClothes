@@ -1,12 +1,14 @@
 import React from 'react';
 import {Link} from 'react-scroll';
 import './scss/navigation.scss';
+import NavPages from './NavPages';
 
 const Navigation = () =>{
     return(
         <nav className="nav">
             <div>
-                <a href="/login">Zaloguj</a>
+                <NavPages />
+                {/* <a href="/login">Zaloguj</a> */}
             </div>
             <ul className="nav__list">
                 <Link className="nav__list__item" activeClass="active" to="firstSection" smooth={true} offset={0} duration={500}>Start</Link>
