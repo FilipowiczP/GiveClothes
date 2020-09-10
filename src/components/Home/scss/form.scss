@@ -10,6 +10,9 @@
             display: flex;
             flex-direction: column;
             margin: 10px 20px;
+            &__label{
+                font-weight: bold;
+            }
             &__input{
                 border: none;
                 border-bottom: 2px solid $fourth-color;
@@ -24,6 +27,9 @@
     &__area{
         width: 100%;
         margin-left: 20px;
+        &__label{
+            font-weight: bold;
+        }
         &__textarea{
             background-color: rgba(255, 255, 255, 0.2);
             height: 120px;

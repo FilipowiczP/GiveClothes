@@ -22,7 +22,7 @@ const Form = () =>{
                 </div>
             </div>
             <div className="form__area">
-                <label for="textArea">Wpisz swoją wiadomość </label>
+                <label for="textArea" className="form__area__label">Wpisz swoją wiadomość </label>
                 <textarea className="form__area__textarea" id="textArea" placeholder="Lorem ipsum dolor sit amet, consectetur 
                 adipiscing elit, sed do eiusmod tempor incididunt ut 
                 labore et dolore magna aliqua. Ut enim ad minim veniam, 
