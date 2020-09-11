@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from '../Home/Navigation';
 import './scss/login.scss';
 import decoration from '../images/Decoration.svg';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 
 const Login = () =>{
     return(
@@ -19,7 +19,7 @@ const Login = () =>{
                 </form>
                 <div className="login__box">
                     <Link to="/register" className="login__box__link">Załóż konto</Link>
-                    <Link to="/login" href="#" className="login__box__link">Zaloguj</Link>
+                    <Link to="/login" className="login__box__link">Zaloguj</Link>
                 </div>
             </main>
         </>
