@@ -30,7 +30,7 @@ const Form = () =>{
                 ex ea commodo consequat."></textarea>
             </div>
             <p className={send ? "form__send" : "form__send-hide"}>Wiadomość wysłana</p>
-            <button type="submit" onClick={handleClick} className="form__submit">Wyślij</button>
+            <button onClick={handleClick} className="form__submit">Wyślij</button>
         </form>
     );
 }
