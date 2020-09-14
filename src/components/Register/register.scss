@@ -29,6 +29,16 @@
             border: none;
             border-bottom: 1px solid $fourth-color;
         }
+        &__button{
+            font-size: 18px;
+            cursor: pointer;
+            height: 30px;
+            width: 150px;
+            margin: auto;
+            background-color: $main-color;
+            border: none;
+            outline: 0;
+        }
         &__validation{
             display: none;
             &-error{

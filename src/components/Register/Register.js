@@ -61,7 +61,7 @@ const Register = () =>{
                     <label for="repeatPassword" className="register__form__label">Powtórz hasło</label>
                     <input type="password" id="repeatPassword" className="register__form__input" value={repeatPassword} onChange={e => setRepeatPassword(e.currentTarget.value)} />
                    
-                    <button type="submit">Załóż konto</button>
+                    <button type="submit" className="register__form__button">Załóż konto</button>
                 </form>
 
                 <Link to="/login" className="register__link">Zaloguj</Link>
