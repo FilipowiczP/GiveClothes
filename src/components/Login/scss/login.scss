@@ -29,14 +29,7 @@
             height: 40px;
             border: none;
             border-bottom: 1px solid $fourth-color;
-        }
-    }
-    &__box{
-        display: flex;
-        justify-content: space-between;
-        &__link{
-            display: block;
-            margin: 40px 10vw;
+            outline: 0;
         }
     }
 }

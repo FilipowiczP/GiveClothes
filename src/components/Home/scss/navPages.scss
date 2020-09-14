@@ -1,0 +1,10 @@
+@import '../../settings/colors';
+
+.navPages{
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    &:hover{
+        border: 0.75px solid $fifth-color;
+    }
+}

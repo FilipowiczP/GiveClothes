@@ -63,9 +63,6 @@ const Register = () =>{
                    
                     <button type="submit" className="register__form__button">Załóż konto</button>
                 </form>
-
-                <Link to="/login" className="register__link">Zaloguj</Link>
-
             </main>
         </>
     );

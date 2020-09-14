@@ -1,5 +1,6 @@
 import React from 'react';
 import './scss/footer.scss';
+
 import decoration from '../images/Decoration.svg';
 import Form from './Form';
 
