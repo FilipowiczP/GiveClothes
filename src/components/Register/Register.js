@@ -4,13 +4,12 @@ import './register.scss';
 import Navigation from '../Home/Navigation';
 import decoration from '../images/Decoration.svg';
 
-import { Link } from 'react-router-dom';
 import firebase from '../../firebase';
 
 const Register = () =>{
 
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
 
     const [errorEmail, setErrorEmail] = useState(false);
@@ -19,23 +18,27 @@ const Register = () =>{
     const onSubmit = (event) =>{
         event.preventDefault();
         
-        if(email.length < 15){
+        if(email.length < 5){
 
             setErrorEmail(true);
 
-        }else if(password !== repeatPassword){
+        }else if(newPassword !== repeatPassword && newPassword <= 4){
 
             setErrorPassword(true);
 
         }else{
+
             setErrorPassword(false);
-            firebase.firestore().collection('profile').add({
-                email,
-                password
-            })
+
+            firebase.auth().createUserWithEmailAndPassword(email, newPassword).catch(function(error){
+                    let errorCode = error.code;
+                    let errorMessage = error.message;
+                    console.log(errorCode + " " + errorMessage);
+                    console.log("zarejstrowano");
+                 })
             .then(()=>{
                 setEmail('');
-                setPassword('');
+                setNewPassword('');
                 setRepeatPassword('');
             })
         }
@@ -47,6 +50,7 @@ const Register = () =>{
             <main className="register">
                 <h1 className="register__title">Załóż kotno</h1>
                 <img src={decoration} alt="decoration" className="register__decoration" />
+                
                 <form className="register__form" onSubmit={onSubmit}>
                     <p className={errorEmail ? "register__form__validation-error" : "register__form__validation"}>Nie poprawny email</p>
                    
@@ -56,7 +60,7 @@ const Register = () =>{
                     <p className={errorPassword ? "register__form__validation-error" : "register__form__validation"}>Nie poprawne hasło</p>
                     
                     <label for="password" className="register__form__label">Hasło</label>
-                    <input type="password" id="password" className="register__form__input" value={password} onChange={e => setPassword(e.currentTarget.value)} />
+                    <input type="password" id="password" className="register__form__input" value={newPassword} onChange={e => setNewPassword(e.currentTarget.value)} />
                    
                     <label for="repeatPassword" className="register__form__label">Powtórz hasło</label>
                     <input type="password" id="repeatPassword" className="register__form__input" value={repeatPassword} onChange={e => setRepeatPassword(e.currentTarget.value)} />
