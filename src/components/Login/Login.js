@@ -8,23 +8,28 @@ import Navigation from '../Home/Navigation';
 
 const Login = () =>{
 
-    const [email, setEmail] = useState ('')
-    const [password, setPassword] = useState ('')
+    const [email, setEmail] = useState ('');
+    const [password, setPassword] = useState ('');
+    const [user, setUser] = useState('');
 
     const onSubmit = (event) =>{
+
         event.preventDefault();
-        
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
+
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+            setUser(email);
+            console.log("zalogowano");
+        }).catch(function(error){
+
             let errorCode = error.code;
             let errorMessage = error.message;
             console.log(errorCode + " " + errorMessage);
-            console.log("zalogowano");
         })
     }
 
     return(
         <>
-            <Navigation />
+            <Navigation user={user}/>
             <main className="login">
                 <h1 className="login__title">Zaloguj</h1>
                 <img src={decoration} alt="decoration" className="login__decoration" />
