@@ -1,10 +1,12 @@
 import React from 'react';
 import './scss/secondSection.scss';
+
 import decoration from '../images/Decoration.svg';
 import icon1 from '../images/Icon-1.svg'
 import icon2 from '../images/Icon-2.svg'
 import icon3 from '../images/Icon-3.svg'
 import icon4 from '../images/Icon-4.svg'
+
 import { Link } from 'react-scroll';
 
 const SecondSection = () => {

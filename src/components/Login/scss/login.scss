@@ -31,5 +31,16 @@
             border-bottom: 1px solid $fourth-color;
             outline: 0;
         }
+        &__button{
+            font-size: 18px;
+            cursor: pointer;
+            height: 30px;
+            width: 150px;
+            margin: auto;
+            color: $fifth-color;;
+            background-color: $main-color;
+            border: none;
+            outline: 0;
+        }
     }
 }

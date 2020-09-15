@@ -2,7 +2,6 @@ import React from 'react';
 import Navigation from '../Home/Navigation';
 import './scss/login.scss';
 import decoration from '../images/Decoration.svg';
-import { Link } from 'react-router-dom';
 
 const Login = () =>{
     return(
@@ -16,7 +15,7 @@ const Login = () =>{
                     <input type="email" id="email" className="login__form__input"></input> 
                     <label for="password" className="login__form__label">Hasło</label>
                     <input type="password" id="password" className="login__form__input"></input> 
-                    <button type="submit">Zaloguj</button>
+                    <button type="submit" className="login__form__button">Zaloguj</button>
                 </form>
             </main>
         </>
