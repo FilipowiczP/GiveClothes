@@ -1,27 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './scss/navPages.scss';
+import firebase from '../../firebase';
 
 import { Link } from 'react-router-dom';
 
-const NavPages = ({user}) =>{
+const NavPages = () =>{
 
+    const [login, setLogin] = useState(null)
 
-    if (user) {
+    firebase.auth().onAuthStateChanged(function(user) {
+        setLogin(user.email);
+    });
+
+    if (login) {
         return(
             <>
-                <p>Cześć {user}</p>
+                <p>Cześć {login}</p>
                 <Link to='/logout' className="navPages">Wyloguj</Link>
                 <Link className="navPages" to="/">Główna</Link>       
             </>
         );
-    }else {
+    } else {
         return(
             <>
                 <Link className="navPages" to="/">Główna</Link>       
                 <Link className="navPages" to="/login">Zaloguj</Link>       
                 <Link className="navPages" to="/register">Zarejstruj</Link>       
             </>
-    )};
+        )
+    };
 };
 
 export default NavPages;

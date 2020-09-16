@@ -10,15 +10,11 @@ const Login = () =>{
 
     const [email, setEmail] = useState ('');
     const [password, setPassword] = useState ('');
-    const [user, setUser] = useState('');
 
     const onSubmit = (event) =>{
-
         event.preventDefault();
 
-        firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
-            setUser(email);
-        }).catch(function(error){
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
             
             let errorCode = error.code;
             let errorMessage = error.message;
@@ -28,7 +24,7 @@ const Login = () =>{
 
     return(
         <>
-            <Navigation user={user}/>
+            <Navigation />
             <main className="login">
                 <h1 className="login__title">Zaloguj</h1>
                 <img src={decoration} alt="decoration" className="login__decoration" />
