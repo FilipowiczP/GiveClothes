@@ -1,10 +1,22 @@
 import React from 'react';
 import './logout.scss';
-import { Link } from 'react-router-dom';
+import firebase from '../../firebase';
 
 import decoration from '../images/Decoration.svg';
 
+import { Link } from 'react-router-dom';
+
 const Logout = () =>{
+
+    
+    firebase.auth().signOut().catch(function(error) {
+
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        console.log(errorCode + " " + errorMessage);
+
+      });
+ 
     return(
         <main className="logout">
             <h1 className="logout__title">Wylogowanie nastąpiło pomyślnie!</h1>
