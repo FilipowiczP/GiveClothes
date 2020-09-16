@@ -3,6 +3,7 @@ import './scss/giveClothes.scss';
 
 import decoration from '../images/Decoration.svg';
 import Navigation from '../Home/Navigation';
+import Info from './Info';
 import Message from '../Home/Footer'
 
 
@@ -39,8 +40,8 @@ const GiveClothes = () =>{
                         </div>
                     </div>
                 </div>
-
             </main>
+            <Info />
             <Message />
         </>
     );

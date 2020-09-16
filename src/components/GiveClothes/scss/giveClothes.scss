@@ -9,9 +9,19 @@
     background-image: url(../../images/sweater.jpg);
     background-repeat: no-repeat;
     background-position: top left;
-    background-size: 70%;
-    padding-bottom: 40px;
+    background-size: 80%;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.6);
+        z-index: 2;
+    }
     &__content{
+        z-index: 3;
         text-align: center;
         &__title{
             font-size: 38px;
@@ -27,8 +37,12 @@
             &__box{
                 width: 100px;
                 height: 100px;
-                margin: 50px 5px;
+                margin: 50px 10px;
                 position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
                 &::before{
                     content: '';
                     position: absolute;
