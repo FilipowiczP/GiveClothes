@@ -14,12 +14,15 @@ const Login = () =>{
     const onSubmit = (event) =>{
         event.preventDefault();
 
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error){
+        firebase.auth().signInWithEmailAndPassword(email, password).then(()=>{
+            window.location.replace('/');
+        }).catch(function(error){
             
             let errorCode = error.code;
             let errorMessage = error.message;
             console.log(errorCode + " " + errorMessage);
         })
+
     }
 
     return(
