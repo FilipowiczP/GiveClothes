@@ -18,7 +18,4 @@ import 'firebase/auth';
   firebase.initializeApp(firebaseConfig);
   // firebase.analytics();
 
-  let provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider);
-
 export default firebase;

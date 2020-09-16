@@ -18,9 +18,8 @@ const Login = () =>{
 
         firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
             setUser(email);
-            console.log("zalogowano");
         }).catch(function(error){
-
+            
             let errorCode = error.code;
             let errorMessage = error.message;
             console.log(errorCode + " " + errorMessage);
@@ -48,4 +47,4 @@ const Login = () =>{
     );
 }
 
-export default Login;;
+export default Login;
