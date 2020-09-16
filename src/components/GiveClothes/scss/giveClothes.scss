@@ -1,14 +1,45 @@
 @import '../../settings/colors';
 
 .giveClothes{
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
     color: $fifth-color;
-    cursor: pointer;
-    width: 280px;
-    text-align: center;
-    font-size: 36px;
-    text-transform: uppercase;
-    border: 0.75px solid $fifth-color;
-    padding: 25px;
-    margin: 0 20px;
+    background-image: url(../../images/sweater.jpg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 70%;
+    padding-bottom: 40px;
+    &__content{
+        text-align: center;
+        &__title{
+            font-size: 38px;
+            font-weight: normal;
+            margin: 20px 40px;
+        }
+        &__decoration{
+            margin: 20px 0;
+        }
+        &__steps{
+            display: flex;
+            justify-content: center;
+            &__box{
+                width: 100px;
+                height: 100px;
+                margin: 50px 5px;
+                position: relative;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    transform: rotate(45deg);
+                    border: 0.75px solid $fifth-color;
+                }
+            }
+        }
+    }
 }

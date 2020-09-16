@@ -1,0 +1,14 @@
+@import '../../settings/colors';
+
+.giveClothesLink{
+    text-decoration: none;
+    color: $fifth-color;
+    cursor: pointer;
+    width: 280px;
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    border: 0.75px solid $fifth-color;
+    padding: 25px;
+    margin: 0 20px;
+}

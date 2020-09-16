@@ -4,7 +4,7 @@ import './scss/main.scss';
 
 import decoration from '../images/Decoration.svg';
 import Navigation from './Navigation';
-import GiveClothes from '../GiveClothes/GiveClothes'
+import GiveClothesLink from '../GiveClothes/GiveClothesLinks'
 
 const Main = () => {
     return(
@@ -17,7 +17,7 @@ const Main = () => {
                     <h1 className="main__content__text">Oddaj niechciane rzeczy w zaufane ręce</h1>
                 <img src={decoration} alt="decoration" />
                 <div className="main__content__box">
-                    <GiveClothes />
+                    <GiveClothesLink />
                     <Link className="main__content__box__link"  activeClass="active" to="" smooth={true} offset={0} duration={500}>Zorganizuj zbiórkę</Link>
                 </div>
             </div>
