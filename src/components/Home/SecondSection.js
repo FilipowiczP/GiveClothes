@@ -7,7 +7,7 @@ import icon2 from '../images/Icon-2.svg'
 import icon3 from '../images/Icon-3.svg'
 import icon4 from '../images/Icon-4.svg'
 
-import { Link } from 'react-scroll';
+import GiveClothesLink from '../GiveClothes/GiveClothesLinks';
 
 const SecondSection = () => {
     return(
@@ -38,7 +38,7 @@ const SecondSection = () => {
                 </div>
             </div>
 
-            <Link className="secondSection__link"  activeClass="active" to="" smooth={true} offset={0} duration={500}>Oddaj rzeczy</Link>
+            <GiveClothesLink />
 
         </section>
     );

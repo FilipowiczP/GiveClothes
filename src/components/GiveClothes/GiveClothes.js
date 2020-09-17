@@ -2,8 +2,10 @@ import React from 'react';
 import './scss/giveClothes.scss';
 
 import decoration from '../images/Decoration.svg';
+
 import Navigation from '../Home/Navigation';
 import Info from './Info';
+import FormClothes from './FormClothes';
 import Message from '../Home/Footer'
 
 
@@ -42,6 +44,7 @@ const GiveClothes = () =>{
                 </div>
             </main>
             <Info />
+            <FormClothes />
             <Message />
         </>
     );
