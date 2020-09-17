@@ -2,7 +2,7 @@
 
 .formClothes{
     width: 100vh;
-    height: 80vh;
+    height: 85vh;
     position: relative;
     padding: 80px;
     &::before{
@@ -17,6 +17,17 @@
         background-size: cover;
         background-repeat: no-repeat;
         z-index: -1;    
+    }
+    &__button{
+        color: $fifth-color;
+        cursor: pointer;
+        width: 120px;
+        text-align: center;
+        font-size: 24px;
+        text-transform: uppercase;
+        border: 0.75px solid $fifth-color;
+        padding: 10px;
+        margin: 30px 20px;
     }
     &__step{
       font-size: 24px;  
@@ -61,22 +72,14 @@
             &__input:checked + &__checkbox::after{
                 background: $third-color;
             }
-            &__button{
-                color: $fifth-color;
-                cursor: pointer;
-                width: 100px;
-                text-align: center;
-                font-size: 24px;
-                text-transform: uppercase;
-                border: 0.75px solid $fifth-color;
-                padding: 10px;
-                margin: 30px 0;
-            }
         }
     }
     &__secondStep{
         margin: 80px 0;
         width: 550px;
+        &-hide{
+            display: none;
+        }
         &__title{
             font-size: 36px;
         }
@@ -86,21 +89,88 @@
                 width: 150px;
                 height: 40px;
                 font-size: 24px;
-                border: 0.75px solid $fifth-color;
                 margin: 0 50px;
+
+                appearance: none;
+                outline: 0;
+                border: 0.75px solid $fifth-color;
+                padding: 0 20px;
+                cursor: pointer;
+                background-color: transparent;
+                &::-ms-expand{
+                    display: none;
+                }
             }
         }
-        &__button{
-            color: $fifth-color;
-            cursor: pointer;
-            width: 120px;
-            text-align: center;
-            font-size: 24px;
-            text-transform: uppercase;
-            border: 0.75px solid $fifth-color;
-            padding: 10px;
-            margin: 30px 20px;
+    }
 
+    &__thirdStep{
+        margin: 80px 0;
+        width: 550px;
+        &-hide{
+            display: none;
+        } 
+        &__title{
+            font-size: 36px;
+        }
+        &__form{
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+            &__select{
+                width: 170px;
+                height: 40px;
+                font-size: 24px;
+                margin: 20px 50px;
+
+                appearance: none;
+                outline: 0;
+                border: 0.75px solid $fifth-color;
+                padding: 0 20px;
+                cursor: pointer;
+                background-color: transparent;
+                &::-ms-expand{
+                    display: none;
+                }
+            }
+            &__box{
+                display: flex;
+                flex-wrap: wrap;
+                margin: 20px 0;
+            }
+            &__radio{
+                border: 0.75px solid $fifth-color;
+                padding: 10px 20px;
+                margin: 10px;
+                cursor: pointer;
+                background-color: transparent;
+                position: relative;
+            }
+            &__input{
+                display: none;
+            }
+            &__checkbox{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &__input:checked + &__checkbox{
+                background-color: $third-color;
+                z-index: -1;
+            }
+            &__organization{
+                padding: 10px 5px;
+                height: 30px;
+                width: 400px;
+            }
         }
     }
 }

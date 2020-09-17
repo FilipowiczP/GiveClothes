@@ -9,9 +9,13 @@ const FormClothes = () =>{
     const [formAnswer, setFormAnswer] = useState ({
         firstStep: null,
         select: null,
+        location:'',
+        whoHelp:'',
+        organization:'',
     })
     
     const ChangeHandler = (e) =>{
+        e.preventDefault();
         setFormAnswer({
             ...step,
             firstStep: e.currentTarget.value
@@ -19,11 +23,37 @@ const FormClothes = () =>{
     }
 
     const selectHandler = (e) =>{
+        e.preventDefault();
         setFormAnswer({
             ...step,
             select: e.currentTarget.value
         })
         console.log(formAnswer);
+    }
+    
+    const locationHandler = (e)=>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            location: e.currentTarget.value,
+        })
+        
+    }
+
+    const whoHelp = (e)=>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            whoHelp: e.currentTarget.value,
+        })
+    }
+
+    const organization =(e) =>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            organization: e.currentTarget.value,
+        })
     }
 
     const nextStep = (event) =>{
@@ -35,6 +65,8 @@ const FormClothes = () =>{
         event.preventDefault();
         setStep(prev => prev - 1);        
     }
+
+
 
 
     return(
@@ -75,7 +107,7 @@ const FormClothes = () =>{
                         <span className="formClothes__firstStep__form__checkbox"></span>
                     </label>
 
-                    <button type="submit" className="formClothes__firstStep__form__button" onClick={event => nextStep(event)}>Dalej</button>
+                    <button type="submit" className="formClothes__button" onClick={event => nextStep(event)}>Dalej</button>
                 </form>
             </div>
 
@@ -85,22 +117,82 @@ const FormClothes = () =>{
              
                 <form className="formClothes__secondStep__form">
                   
-                    <label for="bag">Liczba 60l worków</label>
-                    <select name="bag" id="bag" className="formClothes__secondStep__form__select" onChange={e => selectHandler(e)}>
-                        <option disabled selected hidden>-Wybierz-</option>
-                        <option value="1" >1</option>
-                        <option value="2" >2</option>
-                        <option value="3" >3</option>
-                        <option value="4" >4</option>
-                        <option value="5" >5</option>
-                    </select>
-              
+                    <label for="bag" className="formClothes__secondStep__label">
+                        Liczba 60l worków
+                        <select name="bag" id="bag" className="formClothes__secondStep__form__select" onChange={e => selectHandler(e)}>
+                            <option disabled selected hidden>-Wybierz-</option>
+                            <option value="1" >1</option>
+                            <option value="2" >2</option>
+                            <option value="3" >3</option>
+                            <option value="4" >4</option>
+                            <option value="5" >5</option>
+                        </select>
+                    </label>
                 </form>
               
-                <button onClick={event => prevStep(event)} className="formClothes__secondStep__button">Wstecz</button>
-                <button onClick={event => nextStep(event)} className="formClothes__secondStep__button">Dalej</button>
+                <button onClick={event => prevStep(event)} className="formClothes__button">Wstecz</button>
+                <button onClick={event => nextStep(event)} className="formClothes__button">Dalej</button>
           
             </div>
+
+            <div className={step === 3 ? "formClothes__thirdStep" : "formClothes__thirdStep-hide"}>
+                <h1 className="formClothes__thirdStep__title">Lokalizacja:</h1>
+
+                <form className="formClothes__thirdStep__form">
+
+                    <label>
+                        <select className="formClothes__thirdStep__form__select" onChange={e => locationHandler(e)}>
+                            <option disabled selected hidden>-Wybierz-</option>
+                            <option value="Poznań">Poznań</option>
+                            <option value="Warszawa">Warszawa</option>
+                            <option value="Kraków">Kraków</option>
+                            <option value="Wrocław">Wrocław</option>
+                            <option value="Katowice">Katowice</option>
+                        </select>
+                    </label>
+
+                    <div className="formClothes__thirdStep__form__box">
+                        <label for="forWho" className="formClothes__thirdStep__form__radio">
+                            <input type="radio" id="forWho" name="forWho" className="formClothes__thirdStep__form__input" onChange={e => whoHelp(e)}/>
+                            dzieciom
+                            <span className="formClothes__thirdStep__form__checkbox"></span>
+                        </label>
+
+                        <label for="forWho1" className="formClothes__thirdStep__form__radio">
+                            <input type="radio" id="forWho1" name="forWho" className="formClothes__thirdStep__form__input" onChange={e => whoHelp(e)}/>
+                            samotnym matkom
+                            <span className="formClothes__thirdStep__form__checkbox"></span>
+                        </label>
+
+                        <label for="forWho2" className="formClothes__thirdStep__form__radio">
+                            <input type="radio" id="forWho2" name="forWho" className="formClothes__thirdStep__form__input" onChange={e => whoHelp(e)}/>
+                            bezdomnym
+                            <span className="formClothes__thirdStep__form__checkbox"></span>
+                        </label>
+
+                        <label for="forWho3" className="formClothes__thirdStep__form__radio">
+                            <input type="radio" id="forWho3" name="forWho" className="formClothes__thirdStep__form__input" onChange={e => whoHelp(e)}/>
+                            niepełnosprawnym
+                            <span className="formClothes__thirdStep__form__checkbox"></span>
+                        </label>
+
+                        <label for="forWho4" className="formClothes__thirdStep__form__radio">
+                            <input type="radio" id="forWho4" name="forWho" className="formClothes__thirdStep__form__input" onChange={e => whoHelp(e)}/>
+                            osobą starszym
+                            <span className="formClothes__thirdStep__form__checkbox"></span>
+                        </label>
+                    </div>
+
+                    <label for="organization">Wpisz nazwę konkretnej organizacji(opcjonalne)</label>
+                    <input type="text" id="organization" className="formClothes__thirdStep__form__organization" onChange={e => organization(e)}/>
+
+                </form>
+
+                <button onClick={event => prevStep(event)} className="formClothes__button">Wstecz</button>
+                <button onClick={event => nextStep(event)} className="formClothes__button">Dalej</button>
+          
+            </div>
+
         </section>
     );
 };
