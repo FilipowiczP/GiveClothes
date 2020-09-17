@@ -26,6 +26,9 @@
     &__firstStep{
         margin: 80px 0;
         width: 550px;
+        &-hide{
+            display: none;
+        }
         &__title{
             font-size: 36px;
         }
@@ -69,6 +72,35 @@
                 padding: 10px;
                 margin: 30px 0;
             }
+        }
+    }
+    &__secondStep{
+        margin: 80px 0;
+        width: 550px;
+        &__title{
+            font-size: 36px;
+        }
+        &__form{
+            margin: 50px 0;
+            &__select{
+                width: 150px;
+                height: 40px;
+                font-size: 24px;
+                border: 0.75px solid $fifth-color;
+                margin: 0 50px;
+            }
+        }
+        &__button{
+            color: $fifth-color;
+            cursor: pointer;
+            width: 120px;
+            text-align: center;
+            font-size: 24px;
+            text-transform: uppercase;
+            border: 0.75px solid $fifth-color;
+            padding: 10px;
+            margin: 30px 20px;
+
         }
     }
 }
