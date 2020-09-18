@@ -5,7 +5,6 @@
 * React
   * Router
 * Sass
-* RWD
 * Npm
    * react-scroll
    * node-sass
