@@ -7,11 +7,18 @@ const FormClothes = () =>{
     const [step, setStep] = useState (1);
 
     const [formAnswer, setFormAnswer] = useState ({
-        firstStep: null,
-        select: null,
+        firstStep: '',
+        select: '',
         location:'',
         whoHelp:'',
         organization:'',
+        street:'',
+        city:'',
+        zip:'',
+        phone:'',
+        data:'',
+        hour:'',
+        comment:''
     })
     
     const ChangeHandler = (e) =>{
@@ -53,6 +60,62 @@ const FormClothes = () =>{
         setFormAnswer({
             ...step,
             organization: e.currentTarget.value,
+        })
+    }
+    
+    const street =(e) =>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            street: e.currentTarget.value,
+        })
+    }
+    
+    const city =(e) =>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            city: e.currentTarget.value,
+        })
+    }
+    
+    const zip =(e) =>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            zip: e.currentTarget.value,
+        })
+    }
+    
+    const phone =(e) =>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            phone: e.currentTarget.value,
+        })
+    }
+
+    const data =(e) =>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            data: e.currentTarget.value,
+        })
+    }
+    
+    const hour =(e) =>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            hour: e.currentTarget.value,
+        })
+    }
+
+    const comment =(e) =>{
+        e.preventDefault();
+        setFormAnswer({
+            ...step,
+            comment: e.currentTarget.value,
         })
     }
 
@@ -190,7 +253,52 @@ const FormClothes = () =>{
 
                 <button onClick={event => prevStep(event)} className="formClothes__button">Wstecz</button>
                 <button onClick={event => nextStep(event)} className="formClothes__button">Dalej</button>
-          
+            </div>
+
+            <div className={step === 4 ? "formClothes__fourthStep" : "formClothes__fourthStep-hide"}>
+                <h1 className="formClothes__fourthStep__title">Podaj adres oraz termin odbioru rzecz przez kuriera</h1>
+
+                <form className="formClothes__fourthStep__form">
+                    <div className="formClothes__fourthStep__form__box">
+                        <h2>Adres odbioru:</h2>
+                        <label className="formClothes__fourthStep__form__label">
+                            Ulica
+                            <input type="text" className="formClothes__fourthStep__form__input" onChange={e => street(e)}/>
+                        </label>
+                        <label className="formClothes__fourthStep__form__label">
+                            Miasto
+                            <input type="text" className="formClothes__fourthStep__form__input" onChange={e => city(e)}/>
+                        </label>
+                        <label className="formClothes__fourthStep__form__label">
+                            Kod pocztowy
+                            <input type="text" className="formClothes__fourthStep__form__input" onChange={e => zip(e)}/>
+                        </label>
+                        <label className="formClothes__fourthStep__form__label">
+                            Numer telefonu
+                            <input type="text" className="formClothes__fourthStep__form__input" onChange={e => phone(e)}/>
+                        </label>
+                    </div>
+
+                    <div className="formClothes__fourthStep__form__box">
+                        <h2>Termin odbioru:</h2>
+                        <label className="formClothes__fourthStep__form__label">
+                            Data
+                            <input type="text" className="formClothes__fourthStep__form__input" onChange={e => data(e)}/>
+                        </label>
+                        <label className="formClothes__fourthStep__form__label">
+                            Godzina
+                            <input type="text" className="formClothes__fourthStep__form__input" onChange={e => hour(e)}/>
+                        </label>
+                        <label className="formClothes__fourthStep__form__label">
+                            Uwagi dla kuriera
+                            <input type="text" className="formClothes__fourthStep__form__input" onChange={e => comment(e)}/>
+                        </label>
+                    </div>
+
+                </form>
+
+                <button onClick={event => prevStep(event)} className="formClothes__button">Wstecz</button>
+                <button onClick={event => nextStep(event)} className="formClothes__button">Dalej</button>
             </div>
 
         </section>
