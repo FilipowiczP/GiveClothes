@@ -6,6 +6,19 @@ const FormClothes = () =>{
     
     const [step, setStep] = useState (1);
 
+    const [firstStep, setFirstStep] = useState ('');
+    const [select, setSelect] = useState ('');
+    const [location, setLocation] = useState ('');
+    const [whoHelps, setWhoHelps] = useState ('');
+    const [organizations, setOrganizations] = useState ('');
+    const [streets, setStreets] = useState ('');
+    const [town, setTown] = useState ('');
+    const [zips, setZips] = useState ('');
+    const [nr, setNr] = useState ('');
+    const [day, setDay] = useState ('');
+    const [time, setTime] = useState ('');
+    const [comments, setComments] = useState ('');
+
     const [formAnswer, setFormAnswer] = useState ({
         firstStep: '',
         select: '',
@@ -23,103 +36,79 @@ const FormClothes = () =>{
     
     const ChangeHandler = (e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            firstStep: e.currentTarget.value
-        })
+        setFirstStep(e.currentTarget.value)
     }
 
     const selectHandler = (e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            select: e.currentTarget.value
-        })
-        console.log(formAnswer);
+        setSelect(e.currentTarget.value)
     }
     
     const locationHandler = (e)=>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            location: e.currentTarget.value,
-        })
-        
+        setLocation(e.currentTarget.value)
     }
 
     const whoHelp = (e)=>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            whoHelp: e.currentTarget.value,
-        })
+        setWhoHelps(e.currentTarget.value)
     }
 
     const organization =(e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            organization: e.currentTarget.value,
-        })
+        setOrganizations( e.currentTarget.value)
     }
     
     const street =(e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            street: e.currentTarget.value,
-        })
+        setStreets(e.currentTarget.value)
     }
     
     const city =(e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            city: e.currentTarget.value,
-        })
+        setTown(e.currentTarget.value)
     }
     
     const zip =(e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            zip: e.currentTarget.value,
-        })
+        setZips(e.currentTarget.value)
     }
     
     const phone =(e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            phone: e.currentTarget.value,
-        })
+        setNr(e.currentTarget.value)
     }
 
     const data =(e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            data: e.currentTarget.value,
-        })
+        setDay(e.currentTarget.value)
     }
     
     const hour =(e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            hour: e.currentTarget.value,
-        })
+        setTime(e.currentTarget.value)
     }
 
     const comment =(e) =>{
         e.preventDefault();
-        setFormAnswer({
-            ...step,
-            comment: e.currentTarget.value,
-        })
+        setComments(e.currentTarget.value)
     }
 
     const nextStep = (event) =>{
+            setFormAnswer({
+                firstStep:firstStep,
+                select:select,
+                location:location,
+                whoHelp:whoHelps,
+                organization:organizations,
+                street:streets,
+                city:town,
+                zip:zips,
+                phone:nr,
+                data:day,
+                hour:time,
+                comment:comments
+            })
         event.preventDefault();
         setStep(prev => prev + 1);        
     }
@@ -134,8 +123,8 @@ const FormClothes = () =>{
 
     return(
         <section className="formClothes">
-                <h1 className="formClothes__step">Krok {step}/4</h1>
             <div className={step === 1 ? "formClothes__firstStep" : "formClothes__firstStep-hide"}>
+                <h1 className="formClothes__step">Krok {step}/5</h1>
                 <h2 className="formClothes__firstStep__title">Zaznacz co chcesz oddać:</h2>
 
                 <form className="formClothes__firstStep__form">
@@ -176,6 +165,7 @@ const FormClothes = () =>{
 
 
             <div className={step === 2 ? "formClothes__secondStep" : "formClothes__secondStep-hide"}>
+                <h1 className="formClothes__step">Krok {step}/5</h1>
                 <h1 className="formClothes__secondStep__title">Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h1>
              
                 <form className="formClothes__secondStep__form">
@@ -199,6 +189,7 @@ const FormClothes = () =>{
             </div>
 
             <div className={step === 3 ? "formClothes__thirdStep" : "formClothes__thirdStep-hide"}>
+                <h1 className="formClothes__step">Krok {step}/5</h1>
                 <h1 className="formClothes__thirdStep__title">Lokalizacja:</h1>
 
                 <form className="formClothes__thirdStep__form">
@@ -256,6 +247,7 @@ const FormClothes = () =>{
             </div>
 
             <div className={step === 4 ? "formClothes__fourthStep" : "formClothes__fourthStep-hide"}>
+                <h1 className="formClothes__step">Krok {step}/5</h1>
                 <h1 className="formClothes__fourthStep__title">Podaj adres oraz termin odbioru rzecz przez kuriera</h1>
 
                 <form className="formClothes__fourthStep__form">
@@ -301,6 +293,32 @@ const FormClothes = () =>{
                 <button onClick={event => nextStep(event)} className="formClothes__button">Dalej</button>
             </div>
 
+            <div className={step === 5 ? "formClothes__fifthStep" : "formClothes__fifthStep-hide"}>
+                <h1 className="formClothes__step">Krok {step}/5</h1>
+                <h1>Podsumowanie Twojej darowizny</h1>
+                <h2>Oddajesz:</h2>
+                <p>{formAnswer.select} {formAnswer.firstStep},{formAnswer.whoHelp}</p>
+                <p>dla lokalizacji: {formAnswer.location}</p>
+                <div className="formClothes__fifthStep__content">
+                    <div className="formClothes__fifthStep__content__box">
+                        <h2>Adres odbioru</h2>
+                        <p className="formClothes__fifthStep__content__box__text">Ulica: {formAnswer.street}</p>
+                        <p className="formClothes__fifthStep__content__box__text">Miasto: {formAnswer.city}</p>
+                        <p className="formClothes__fifthStep__content__box__text">Kod pocztowy: {formAnswer.zip}</p>
+                        <p className="formClothes__fifthStep__content__box__text">Numer telefonu: {formAnswer.phone}</p>
+                    </div>
+                
+                    <div className="formClothes__fifthStep__content__box">
+                        <h2>Termin odbioru</h2>
+                        <p className="formClothes__fifthStep__content__box__text">Data: {formAnswer.data}</p>
+                        <p className="formClothes__fifthStep__content__box__text">Godzina: {formAnswer.hour}</p>
+                        <p className="formClothes__fifthStep__content__box__text">Uwagi dla kuriera: {formAnswer.comment}</p>
+                    </div>
+                </div>
+
+                <button onClick={event => prevStep(event)} className="formClothes__button">Wstecz</button>
+                <button onClick={event => nextStep(event)} className="formClothes__button">Potwierdzam</button>
+            </div>
         </section>
     );
 };
