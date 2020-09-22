@@ -225,4 +225,18 @@
             }
         }
     }
+    &__lastStep{
+        margin: 80px 0;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-hide{
+            display: none;
+        }
+        &__img{
+            margin: 30px 0;
+        }
+    }
 }

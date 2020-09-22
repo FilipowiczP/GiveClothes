@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import decoration from '../images/Decoration.svg';
+
 import './scss/formClothes.scss';
 
 const FormClothes = () =>{
@@ -116,6 +118,11 @@ const FormClothes = () =>{
     const prevStep = (event) =>{
         event.preventDefault();
         setStep(prev => prev - 1);        
+    }
+
+    const sendAgain = (event) =>{
+        event.preventDefault();
+        setStep(1);        
     }
 
 
@@ -319,6 +326,18 @@ const FormClothes = () =>{
                 <button onClick={event => prevStep(event)} className="formClothes__button">Wstecz</button>
                 <button onClick={event => nextStep(event)} className="formClothes__button">Potwierdzam</button>
             </div>
+            
+            <div className={step === 6 ? "formClothes__lastStep" : "formClothes__lastStep-hide"}>
+                <h1 className="formClothes__lastStep__title">
+                    Dziękujemy za przesłanie formularza
+                    Na maila prześlemy wszelkie informacje o odbiorze.
+                </h1>
+                <img src={decoration} alt="decoration" className="formClothes__lastStep__img" />
+
+                <button onClick={event => sendAgain(event)} className="formClothes__button">Wyślij ponownie</button>
+                
+            </div>
+
         </section>
     );
 };
