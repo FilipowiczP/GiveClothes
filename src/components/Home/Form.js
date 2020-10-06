@@ -1,6 +1,8 @@
 import React,{useEffect, useState} from 'react';
 import './scss/form.scss';
 
+import {api} from './API';
+
 const Form = () =>{
 
     const [send, setSend] = useState (false);
@@ -10,26 +12,10 @@ const Form = () =>{
     
     const handleClick = () =>{
         setSend(true);
+        api(msg, name, email);
     }
 
     
-    useEffect(() => {
-        const requestOption ={
-            method:'POST',
-            headers: {"Content-Type": "application/json"},
-            body:JSON.stringify({
-                msg:msg,
-                name: name,
-                email: email
-            })
-        };
-        fetch('https://fer-api.coderslab.pl/v1/portfolio/contact',requestOption)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        
-    }, [])
-
-
     return(
         <form className="form">
             <div className="form__box">

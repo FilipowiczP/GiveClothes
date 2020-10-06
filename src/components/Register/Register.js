@@ -3,6 +3,7 @@ import './register.scss';
 
 import Navigation from '../Home/Navigation';
 import decoration from '../images/Decoration.svg';
+import {MIN_LENGTH} from './Validation';
 
 import firebase from '../../firebase';
 
@@ -18,11 +19,11 @@ const Register = () =>{
     const onSubmit = (event) =>{
         event.preventDefault();
         
-        if(email.length < 5){
+        if(email.length < MIN_LENGTH){
 
             setErrorEmail(true);
 
-        }else if(newPassword !== repeatPassword && newPassword <= 4){
+        }else if(newPassword !== repeatPassword && newPassword <= MIN_LENGTH){
 
             setErrorPassword(true);
 
