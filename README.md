@@ -1,4 +1,4 @@
-### This project was created by students "UX digital designer" coders lab. Everything was prepared by them and created in adobe xd.
+This project was created by students "UX digital designer" coders lab. Everything was prepared by them and created in adobe xd.
 
 ### `Technologies`
 
